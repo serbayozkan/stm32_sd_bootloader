@@ -1,18 +1,18 @@
 # STM32 SD Bootloader
 
 ## Description
-Bootloader project which enables firmware update over sd card with a lot of error handling mechanisms.
+Custom Bootloader project which enables firmware update over sd card with a lot of error handling mechanisms.
 - Flash Integrity (Firmware Update Corruptions)
 - Hardware SD Card Detection
-- File System Initilization
-- User Defined Firmware File Existance
-- Firmware File CRC
-- Flash Unlock/Erase/Read/Write/Lock Operations
+- File System Initilization Handlers
+- User Defined Firmware File Existance Control
+- CRC Check of Firmware Binary File
+- Flash Unlock/Erase/Read/Write/Lock Operation Controls
 - Comparison of Firmware File Size and User Application Flash Area
 
 Bootloader project uses FatFs file system. 
 
-Wrapper library (sdcard.c and sdcard.h) makes use of FatFs APIs easy.
+SD Card wrapper library (sdcard.c and sdcard.h) makes use of FatFs APIs easy.
 
 ## Usage
 
