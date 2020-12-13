@@ -1,5 +1,5 @@
 Bootloader/Src/sdcard.o: ../Bootloader/Src/sdcard.c \
- C:/Users/serba/STM32CubeIDE/bootloader_sd/bootloader_over_sd_card/Bootloader/Inc/sdcard.h \
+ E:/GitRepo/stm32_sd_bootloader/Bootloader/Inc/sdcard.h \
  ../FATFS/App/fatfs.h ../Middlewares/Third_Party/FatFs/src/ff.h \
  ../Middlewares/Third_Party/FatFs/src/integer.h ../FATFS/Target/ffconf.h \
  ../Core/Inc/main.h ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
@@ -35,7 +35,7 @@ Bootloader/Src/sdcard.o: ../Bootloader/Src/sdcard.c \
  ../Middlewares/Third_Party/FatFs/src/ff.h ../FATFS/Target/sd_diskio.h \
  ../Core/Inc/sdio.h ../Core/Inc/main.h
 
-C:/Users/serba/STM32CubeIDE/bootloader_sd/bootloader_over_sd_card/Bootloader/Inc/sdcard.h:
+E:/GitRepo/stm32_sd_bootloader/Bootloader/Inc/sdcard.h:
 
 ../FATFS/App/fatfs.h:
 

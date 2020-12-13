@@ -24,17 +24,24 @@ static void jump_to_user_app(void)
 	Jump_To_App();
 }
 
-static void bl_welcome_message(void)
+static void bl_welcome_message(bl_t *bl)
 {
 	printf("*******************************************\n"
 		   "*********** STM32 SD Bootloader ***********\n"
 		   "*******************************************\n");
+
+	BL_PRINT("Bootloader is started\n");
+
+	uint8_t version[3] = BL_VERSION;
+	BL_PRINT("Version: %d.%d.%d\n", version[0], version[1], version[2]);
+
+	bl->state = BL_CHECK_SD_CARD;
 }
 
 static void bl_check_sd_card(bl_t *bl)
 {
 	if (SD_CARD_IS_INSERTED()){
-		bl->state = BL_SD_EXIST;
+		bl->state = BL_INIT;
 	}
 
 	else{
@@ -186,7 +193,9 @@ static void bl_check_app_sector(void)
 	}
 
 	if (version[0] != 0xFFFFFFFF && version[1] != 0xFFFFFFFF && version[2] != 0xFFFFFFFF){
-		BL_PRINT("Bootloader Version: %ld.%ld.%ld\n", version[0], version[1], version[2]);
+		BL_PRINT("User App is found and verified\n");
+		BL_PRINT("User App was updated with Version: %ld.%ld.%ld before\n", version[0], version[1], version[2]);
+		BL_PRINT("Jumping to User App...\n");
 		jump_to_user_app();
 	}
 }
@@ -247,26 +256,22 @@ static void bl_rename_fw_file(bl_t *bl)
 static void bl_operation_completed(void)
 {
 	BL_PRINT("Firmware Update is successfully completed\n");
+	uint8_t version[3] = BL_VERSION;
+	BL_PRINT("User App is updated with Version: %d.%d.%d\n", version[0], version[1], version[2]);
+	BL_PRINT("Jumping to Reset Handler...\n");
 	HAL_Delay(1); // Wait for last console output
 	NVIC_SystemReset();
 }
 
 static void bl_init(bl_t *bl)
 {
-	bl_welcome_message();
-	BL_PRINT("Bootloader is started\n");
+	if (!sd_init(&bl->sd)){
+		bl->state = BL_SD_INIT_SUCCESS;
+	}
 
-	bl_check_sd_card(bl);
-
-	if (bl->state == BL_SD_EXIST){
-		if (!sd_init(&bl->sd)){
-			bl->state = BL_SD_INIT_SUCCESS;
-		}
-
-		else{
-			bl->err = BL_SD_INIT_ERR;
-			bl->state = BL_ERR;
-		}
+	else{
+		bl->err = BL_SD_INIT_ERR;
+		bl->state = BL_ERR;
 	}
 }
 
@@ -280,7 +285,7 @@ static void bl_error_handler(bl_t *bl)
 
 			case BL_SD_NOT_EXIST:
 				bl_check_app_sector();
-				BL_PRINT("SD Card is not exist!\n");
+				BL_PRINT("SD Card is not inserted!\n");
 				break;
 
 			case BL_FW_FILE_NOT_EXIST:
@@ -332,6 +337,14 @@ static void bl_error_handler(bl_t *bl)
 void bl_machine(bl_t *bl)
 {
 	switch (bl->state) {
+		case BL_WELCOME:
+			bl_welcome_message(bl);
+			break;
+
+		case BL_CHECK_SD_CARD:
+			bl_check_sd_card(bl);
+			break;
+
 	    case BL_INIT:
 	    	bl_init(bl);
 	    	break;

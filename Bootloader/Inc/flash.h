@@ -18,7 +18,7 @@ int printf(const char *p, ...);
 #if FLASH_DEBUG
 #define FLASH_PRINT(ch, ...) printf("FLASH_DEBUG: "), printf((ch), ##__VA_ARGS__)
 #else
-#define FLASH_DEBUG(__va_args__)
+#define FLASH_DEBUG(ch, ...)
 #endif
 
 #define FLASH_USER_START_ADDR   ADDR_FLASH_SECTOR_5

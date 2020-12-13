@@ -1,5 +1,5 @@
 Bootloader/Src/flash.o: ../Bootloader/Src/flash.c \
- C:/Users/serba/STM32CubeIDE/bootloader_sd/bootloader_over_sd_card/Bootloader/Inc/flash.h \
+ E:/GitRepo/stm32_sd_bootloader/Bootloader/Inc/flash.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -28,7 +28,7 @@ Bootloader/Src/flash.o: ../Bootloader/Src/flash.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sd.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_sdmmc.h
 
-C:/Users/serba/STM32CubeIDE/bootloader_sd/bootloader_over_sd_card/Bootloader/Inc/flash.h:
+E:/GitRepo/stm32_sd_bootloader/Bootloader/Inc/flash.h:
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 

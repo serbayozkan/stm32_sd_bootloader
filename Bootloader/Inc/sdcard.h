@@ -19,14 +19,14 @@ enum {
 	SD_ERR
 };
 
-#define SD_DEBUG              1
+#define SD_DEBUG              0
 
 int printf(const char *p, ...);
 
 #if SD_DEBUG
 #define SD_PRINT(ch, ...) printf("SD_DEBUG: "), printf((ch), ##__VA_ARGS__)
 #else
-#define SD_PRINT(__va_args__)
+#define SD_PRINT(ch, ...)
 #endif
 
 typedef struct _sd{

@@ -33,8 +33,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Middlewares/Third_Party/FatFs/src/diskio.h \
  ../Middlewares/Third_Party/FatFs/src/ff.h ../FATFS/Target/sd_diskio.h \
  ../Core/Inc/sdio.h ../Core/Inc/main.h ../Core/Inc/gpio.h \
- C:/Users/serba/STM32CubeIDE/bootloader_sd/bootloader_over_sd_card/Bootloader/Inc/bl.h \
- C:/Users/serba/STM32CubeIDE/bootloader_sd/bootloader_over_sd_card/Bootloader/Inc/sdcard.h
+ E:/GitRepo/stm32_sd_bootloader/Bootloader/Inc/bl.h \
+ E:/GitRepo/stm32_sd_bootloader/Bootloader/Inc/sdcard.h
 
 ../Core/Inc/main.h:
 
@@ -118,6 +118,6 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 
 ../Core/Inc/gpio.h:
 
-C:/Users/serba/STM32CubeIDE/bootloader_sd/bootloader_over_sd_card/Bootloader/Inc/bl.h:
+E:/GitRepo/stm32_sd_bootloader/Bootloader/Inc/bl.h:
 
-C:/Users/serba/STM32CubeIDE/bootloader_sd/bootloader_over_sd_card/Bootloader/Inc/sdcard.h:
+E:/GitRepo/stm32_sd_bootloader/Bootloader/Inc/sdcard.h:

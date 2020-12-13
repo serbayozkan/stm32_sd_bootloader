@@ -15,7 +15,7 @@
 #if BL_DEBUG
 #define BL_PRINT(ch, ...) printf("BL_DEBUG: "), printf((ch), ##__VA_ARGS__)
 #else
-#define BL_PRINT(__va_args__)
+#define BL_PRINT(ch, ...)
 #endif
 
 #define BL_VERSION             {1, 0, 0}
@@ -27,6 +27,8 @@
 #define FW_MEM_BLOCK            ( 512 )
 
 typedef enum{
+	BL_WELCOME,
+	BL_CHECK_SD_CARD,
 	BL_INIT,
 	BL_APP_AREA_EXIST,
 	BL_SD_EXIST,
