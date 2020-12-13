@@ -16,4 +16,4 @@ bl.c:233:13:bl_rename_fw_file	16	static
 bl.c:247:13:bl_operation_completed	8	static
 bl.c:254:13:bl_init	16	static
 bl.c:273:13:bl_error_handler	16	static
-bl.c:328:6:bl_machine	16	static
+bl.c:332:6:bl_machine	16	static

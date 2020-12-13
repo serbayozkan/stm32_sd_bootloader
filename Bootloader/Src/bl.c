@@ -297,6 +297,10 @@ static void bl_error_handler(bl_t *bl)
 				BL_PRINT("Firmware file has wrong CRC data!\n");
 				break;
 
+			case BL_FW_FILE_READ_ERR:
+				BL_PRINT("Firmware file read error!\n");
+				break;
+
 			case BL_FW_FILE_NOT_RENAMED:
 				BL_PRINT("Firmware file is not renamed!\n");
 				break;
@@ -338,29 +342,29 @@ void bl_machine(bl_t *bl)
 
 		case BL_FW_FILE_EXIST:
 			bl_check_fw_size(bl);
-		break;
+			break;
 
 		case BL_FW_CHECK_CRC:
 			bl_read_firmware(bl);
 			bl_check_fw_crc(bl);
-		break;
+			break;
 
 		case BL_FLASH_UNLOCK:
 			bl_flash_unlock(bl);
-		break;
+			break;
 
 		case BL_FLASH_IS_UNLOCKED:
 			bl_read_firmware(bl);
 			bl_write_to_flash(bl);
-		break;
+			break;
 
 		case BL_FW_FLASH_WRITE_FINISHED:
 			bl_flash_lock(bl);
-		break;
+			break;
 
 		case BL_FW_FILE_RENAME:
 			bl_rename_fw_file(bl);
-		break;
+			break;
 
 		case BL_OP_COMPLETED:
 			bl_operation_completed();

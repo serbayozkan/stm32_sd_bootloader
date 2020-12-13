@@ -1,6 +1,6 @@
 Bootloader/Src/bl.o: ../Bootloader/Src/bl.c \
- C:/Users/serba/STM32CubeIDE/bootloader_sd/bootloader_over_sd_card/Bootloader/Inc/bl.h \
- C:/Users/serba/STM32CubeIDE/bootloader_sd/bootloader_over_sd_card/Bootloader/Inc/sdcard.h \
+ E:/GitRepo/stm32_sd_bootloader/Bootloader/Inc/bl.h \
+ E:/GitRepo/stm32_sd_bootloader/Bootloader/Inc/sdcard.h \
  ../FATFS/App/fatfs.h ../Middlewares/Third_Party/FatFs/src/ff.h \
  ../Middlewares/Third_Party/FatFs/src/integer.h ../FATFS/Target/ffconf.h \
  ../Core/Inc/main.h ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
@@ -35,15 +35,15 @@ Bootloader/Src/bl.o: ../Bootloader/Src/bl.c \
  ../Middlewares/Third_Party/FatFs/src/diskio.h \
  ../Middlewares/Third_Party/FatFs/src/ff.h ../FATFS/Target/sd_diskio.h \
  ../Core/Inc/sdio.h ../Core/Inc/main.h \
- C:/Users/serba/STM32CubeIDE/bootloader_sd/bootloader_over_sd_card/Bootloader/Inc/flash.h \
- C:/Users/serba/STM32CubeIDE/bootloader_sd/bootloader_over_sd_card/Bootloader/Inc/crc.h \
- C:/Users/serba/STM32CubeIDE/bootloader_sd/bootloader_over_sd_card/Bootloader/Inc/sd_bsp.h \
+ E:/GitRepo/stm32_sd_bootloader/Bootloader/Inc/flash.h \
+ E:/GitRepo/stm32_sd_bootloader/Bootloader/Inc/crc.h \
+ E:/GitRepo/stm32_sd_bootloader/Bootloader/Inc/sd_bsp.h \
  ../Core/Inc/gpio.h \
- C:/Users/serba/STM32CubeIDE/bootloader_sd/bootloader_over_sd_card/Bootloader/Inc/led_bsp.h
+ E:/GitRepo/stm32_sd_bootloader/Bootloader/Inc/led_bsp.h
 
-C:/Users/serba/STM32CubeIDE/bootloader_sd/bootloader_over_sd_card/Bootloader/Inc/bl.h:
+E:/GitRepo/stm32_sd_bootloader/Bootloader/Inc/bl.h:
 
-C:/Users/serba/STM32CubeIDE/bootloader_sd/bootloader_over_sd_card/Bootloader/Inc/sdcard.h:
+E:/GitRepo/stm32_sd_bootloader/Bootloader/Inc/sdcard.h:
 
 ../FATFS/App/fatfs.h:
 
@@ -125,12 +125,12 @@ C:/Users/serba/STM32CubeIDE/bootloader_sd/bootloader_over_sd_card/Bootloader/Inc
 
 ../Core/Inc/main.h:
 
-C:/Users/serba/STM32CubeIDE/bootloader_sd/bootloader_over_sd_card/Bootloader/Inc/flash.h:
+E:/GitRepo/stm32_sd_bootloader/Bootloader/Inc/flash.h:
 
-C:/Users/serba/STM32CubeIDE/bootloader_sd/bootloader_over_sd_card/Bootloader/Inc/crc.h:
+E:/GitRepo/stm32_sd_bootloader/Bootloader/Inc/crc.h:
 
-C:/Users/serba/STM32CubeIDE/bootloader_sd/bootloader_over_sd_card/Bootloader/Inc/sd_bsp.h:
+E:/GitRepo/stm32_sd_bootloader/Bootloader/Inc/sd_bsp.h:
 
 ../Core/Inc/gpio.h:
 
-C:/Users/serba/STM32CubeIDE/bootloader_sd/bootloader_over_sd_card/Bootloader/Inc/led_bsp.h:
+E:/GitRepo/stm32_sd_bootloader/Bootloader/Inc/led_bsp.h:
