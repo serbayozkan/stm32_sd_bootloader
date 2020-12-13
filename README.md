@@ -19,5 +19,12 @@ Wrapper library (sdcard.c and sdcard.h) makes use of FatFs APIs easy.
 - This project is generated using STM32CubeIDE 
 - Demo project is demonstrated on STM3240G-EVAL Board but bootloader project can be easily adapted to other microcontrollers and development boards
 
-![sd_bootloader_flow_diagram](https://user-images.githubusercontent.com/43597729/102010994-9fa5fc00-3d52-11eb-9948-834e281aef31.jpg)
+## Notes
+- User Application binaries (.bin file) should include CRC32 at the end of firmware. CRC32 check is done by comparing the CRC32 value of firmware file and sd card input stream buffer.
+- There are online tools that manage your binary files. User could use the below sites to calculate the CRC32 value of binary file and add CRC32 value to the end of firmware file
+
+- https://hexed.it/
+- https://emn178.github.io/online-tools/crc32_checksum.html
+
+![sd_bootloader_flow_diagram](https://user-images.githubusercontent.com/43597729/102011482-86eb1580-3d55-11eb-9912-fcde0ddb91c7.png)
 
