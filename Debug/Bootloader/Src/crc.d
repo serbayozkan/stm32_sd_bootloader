@@ -1,4 +1,4 @@
 Bootloader/Src/crc.o: ../Bootloader/Src/crc.c \
- C:/Users/serba/STM32CubeIDE/bootloader_sd/bootloader_over_sd_card/Bootloader/Inc/crc.h
+ E:/GitRepo/stm32_sd_bootloader/Bootloader/Inc/crc.h
 
-C:/Users/serba/STM32CubeIDE/bootloader_sd/bootloader_over_sd_card/Bootloader/Inc/crc.h:
+E:/GitRepo/stm32_sd_bootloader/Bootloader/Inc/crc.h:

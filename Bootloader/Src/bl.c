@@ -15,13 +15,13 @@ bl_t bl;
 
 static uint32_t write_address = FLASH_USER_START_ADDR;
 
-static void jump_to_user_app(void)
+static void bl_jump_to_user_app(void)
 {
 	typedef void (*pFunction)(void);
-	uint32_t JumpAddress = *(__IO uint32_t*) (FLASH_USER_START_ADDR + 4);
-	pFunction Jump_To_App = (pFunction) JumpAddress;
+	uint32_t jump_address = *(__IO uint32_t*) (FLASH_USER_START_ADDR + 4);
+	pFunction jump_to_app = (pFunction) jump_address;
 	__set_MSP(*(__IO uint32_t*) FLASH_USER_START_ADDR);
-	Jump_To_App();
+	jump_to_app();
 }
 
 static void bl_welcome_message(bl_t *bl)
@@ -80,13 +80,12 @@ static void bl_read_firmware(bl_t *bl)
 
 	else if (!read_error && bl->sd.read_bytes < FW_MEM_BLOCK){
 			bl->total_read_size += bl->sd.read_bytes;
+
 			BL_PRINT("Read is completed. read_cycle: %ld\n", read_cycle);
 			BL_PRINT("Last read bytes: %ld\n", bl->sd.read_bytes);
 
-			bl->crc[0] = bl->data[bl->sd.read_bytes - 1];
-			bl->crc[1] = bl->data[bl->sd.read_bytes - 2];
-			bl->crc[2] = bl->data[bl->sd.read_bytes - 3];
-			bl->crc[3] = bl->data[bl->sd.read_bytes - 4];
+			for (int i = 0; i < 4; i++)
+				bl->crc[i] = bl->data[bl->sd.read_bytes - i - 1];
 
 			read_cycle = 0;
 			sd_file_rewind(&bl->sd);
@@ -196,7 +195,7 @@ static void bl_check_app_sector(void)
 		BL_PRINT("User App is found and verified\n");
 		BL_PRINT("User App was updated with Version: %ld.%ld.%ld before\n", version[0], version[1], version[2]);
 		BL_PRINT("Jumping to User App...\n");
-		jump_to_user_app();
+		bl_jump_to_user_app();
 	}
 }
 
@@ -306,8 +305,13 @@ static void bl_error_handler(bl_t *bl)
 				BL_PRINT("Firmware file read error!\n");
 				break;
 
+			case BL_FW_SIZE_ERR:
+				BL_PRINT("Firmware size error!\n");
+				break;
+
 			case BL_FW_FILE_NOT_RENAMED:
 				BL_PRINT("Firmware file is not renamed!\n");
+				BL_PRINT("There could be a file with same name of renamed fw file!\n");
 				break;
 
 			case BL_FLASH_UNLOCK_ERR:

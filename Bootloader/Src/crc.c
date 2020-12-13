@@ -6,6 +6,8 @@
  */
 #include "crc.h"
 
+// Reference: https://rosettacode.org/wiki/CRC-32
+
 uint32_t rc_crc32(uint32_t crc, const char *buf, uint32_t len)
 {
 	static uint32_t table[256];
