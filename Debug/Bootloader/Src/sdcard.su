@@ -1,0 +1,13 @@
+sdcard.c:10:6:sd_link_driver	24	static
+sdcard.c:28:6:sd_mount	24	static
+sdcard.c:46:6:sd_file_create	16	static
+sdcard.c:57:6:sd_file_open_for_read	24	static
+sdcard.c:73:6:sd_file_close	16	static
+sdcard.c:78:6:sd_file_rename	24	static
+sdcard.c:94:6:sd_file_write	24	static
+sdcard.c:106:6:sd_file_read	32	static
+sdcard.c:122:6:sd_set_file_pointer	24	static
+sdcard.c:133:10:sd_get_file_pointer	16	static
+sdcard.c:138:6:sd_file_rewind	16	static
+sdcard.c:143:10:sd_get_file_size	16	static
+sdcard.c:148:6:sd_init	16	static

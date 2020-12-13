@@ -1,0 +1,6 @@
+flash.c:15:17:GetSector	24	static
+flash.c:71:10:GetSectorSize	24	static
+flash.c:90:6:flash_unlock_and_erase	8	static
+flash.c:122:6:flash_lock	16	static
+flash.c:133:6:flash_write	32	static
+flash.c:148:10:flash_read	24	static

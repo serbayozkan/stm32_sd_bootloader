@@ -1,0 +1,4 @@
+sd_app.c:15:6:sd_open_firmware_file	16	static
+sd_app.c:30:6:sd_read_firmware	16	static
+sd_app.c:54:6:bl_write_to_flash	24	static
+sd_app.c:66:6:sd_machine	16	static
