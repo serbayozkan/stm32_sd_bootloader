@@ -148,7 +148,7 @@ static bool bl_write_version_to_flash(void)
 {
 	uint32_t version[3] = BL_VERSION;
 
-	uint32_t address = FLASH_USER_END_ADDR - (3 * 4) + 1;
+	uint32_t address = FLASH_USER_END_ADDR - BL_VERSION_MEM_SPACE  + 1;
 
 	for (int i = 0; i < 3; i++)
 	{

@@ -1774,7 +1774,7 @@ static bool bl_write_version_to_flash(void)
  8001252:	2300      	movs	r3, #0
  8001254:	613b      	str	r3, [r7, #16]
 
-	uint32_t address = FLASH_USER_END_ADDR - (3 * 4) + 1;
+	uint32_t address = FLASH_USER_END_ADDR - BL_VERSION_MEM_SPACE  + 1;
  8001256:	4813      	ldr	r0, [pc, #76]	; (80012a4 <bl_write_version_to_flash+0x60>)
  8001258:	f000 fbac 	bl	80019b4 <GetSectorSize>
  800125c:	4602      	mov	r2, r0
